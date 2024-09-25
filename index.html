@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,100 +9,104 @@
     <script src="keisan.js"></script>
     <script src="ScS.js"></script>
 </head>
+
 <body>
-    <h1>計算機</h1>
+    <div class="center">
+        <h1>計算機</h1>
 
-    <h2>計算方法の選択</h2>
-    <label>
-        <input type="radio" name="stat" value="critRate" checked>
-        会心率
-    </label><br>
-    <label>
-        <input type="radio" name="stat" value="energyRecharge">
-        元素チャージ
-    </label><br>
-    <label>
-        <input type="radio" name="stat" value="defense">
-        防御
-    </label><br>
-    <label>
-        <input type="radio" name="stat" value="hp">
-        HP
-    </label><br>
-    <label>
-        <input type="radio" name="stat" value="mastery">
-        熟知
-    </label>
+        <h2>計算方法の選択</h2>
+        <label>
+            <input type="radio" name="stat" value="critRate" checked>
+            会心率
+        </label><br>
+        <label>
+            <input type="radio" name="stat" value="energyRecharge">
+            元素チャージ
+        </label><br>
+        <label>
+            <input type="radio" name="stat" value="defense">
+            防御
+        </label><br>
+        <label>
+            <input type="radio" name="stat" value="hp">
+            HP
+        </label><br>
+        <label>
+            <input type="radio" name="stat" value="mastery">
+            熟知
+        </label>
 
-    <h2>数値の入力</h2>
+        <h2>数値の入力</h2>
 
-    <!-- 1st input set -->
-    <div>
-        <label for="select1">ステ1:</label>
-        <select id="select1">
-            <option value="none">なし</option>
-            <option value="critRate">会心率</option>
-            <option value="critDamage">会心ダメージ</option>
-            <option value="attackPower">攻撃力</option>
-            <option value="energyRecharge">元素チャージ</option>
-            <option value="hp">HP</option>
-            <option value="defense">防御力</option>
-            <option value="mastery">熟知</option>
-        </select>
-        <input type="number" id="input1" value="0">
+        <!-- 1st input set -->
+        <div>
+            <label for="select1">ステ1:</label>
+            <select id="select1">
+                <option value="none">なし</option>
+                <option value="critRate">会心率</option>
+                <option value="critDamage">会心ダメージ</option>
+                <option value="attackPower">攻撃力</option>
+                <option value="energyRecharge">元素チャージ</option>
+                <option value="hp">HP</option>
+                <option value="defense">防御力</option>
+                <option value="mastery">熟知</option>
+            </select>
+            <input type="number" id="input1" value="0">
+        </div>
+
+        <!-- 2nd input set -->
+        <div>
+            <label for="select2">ステ2:</label>
+            <select id="select2">
+                <option value="none">なし</option>
+                <option value="critRate">会心率</option>
+                <option value="critDamage">会心ダメージ</option>
+                <option value="attackPower">攻撃力</option>
+                <option value="energyRecharge">元素チャージ</option>
+                <option value="hp">HP</option>
+                <option value="defense">防御力</option>
+                <option value="mastery">熟知</option>
+            </select>
+            <input type="number" id="input2" value="0">
+        </div>
+
+        <!-- 3rd input set -->
+        <div>
+            <label for="select3">ステ3:</label>
+            <select id="select3">
+                <option value="none">なし</option>
+                <option value="critRate">会心率</option>
+                <option value="critDamage">会心ダメージ</option>
+                <option value="attackPower">攻撃力</option>
+                <option value="energyRecharge">元素チャージ</option>
+                <option value="hp">HP</option>
+                <option value="defense">防御力</option>
+                <option value="mastery">熟知</option>
+            </select>
+            <input type="number" id="input3" value="0">
+        </div>
+
+        <!-- 4th input set -->
+        <div>
+            <label for="select4">ステ4:</label>
+            <select id="select4">
+                <option value="none">なし</option>
+                <option value="critRate">会心率</option>
+                <option value="critDamage">会心ダメージ</option>
+                <option value="attackPower">攻撃力</option>
+                <option value="energyRecharge">元素チャージ</option>
+                <option value="hp">HP</option>
+                <option value="defense">防御力</option>
+                <option value="mastery">熟知</option>
+            </select>
+            <input type="number" id="input4" value="0">
+        </div>
+
+        <br>
+        <button onclick="calculate()">計算する</button>
+
+        <div id="result">結果: </div>
     </div>
-
-    <!-- 2nd input set -->
-    <div>
-        <label for="select2">ステ2:</label>
-        <select id="select2">
-            <option value="none">なし</option>
-            <option value="critRate">会心率</option>
-            <option value="critDamage">会心ダメージ</option>
-            <option value="attackPower">攻撃力</option>
-            <option value="energyRecharge">元素チャージ</option>
-            <option value="hp">HP</option>
-            <option value="defense">防御力</option>
-            <option value="mastery">熟知</option>
-        </select>
-        <input type="number" id="input2" value="0">
-    </div>
-
-    <!-- 3rd input set -->
-    <div>
-        <label for="select3">ステ3:</label>
-        <select id="select3">
-            <option value="none">なし</option>
-            <option value="critRate">会心率</option>
-            <option value="critDamage">会心ダメージ</option>
-            <option value="attackPower">攻撃力</option>
-            <option value="energyRecharge">元素チャージ</option>
-            <option value="hp">HP</option>
-            <option value="defense">防御力</option>
-            <option value="mastery">熟知</option>
-        </select>
-        <input type="number" id="input3" value="0">
-    </div>
-
-    <!-- 4th input set -->
-    <div>
-        <label for="select4">ステ4:</label>
-        <select id="select4">
-            <option value="none">なし</option>
-            <option value="critRate">会心率</option>
-            <option value="critDamage">会心ダメージ</option>
-            <option value="attackPower">攻撃力</option>
-            <option value="energyRecharge">元素チャージ</option>
-            <option value="hp">HP</option>
-            <option value="defense">防御力</option>
-            <option value="mastery">熟知</option>
-        </select>
-        <input type="number" id="input4" value="0">
-    </div>
-
-    <br>
-    <button onclick="calculate()">計算する</button>
-
-    <div id="result">結果: </div>
 </body>
+
 </html>
