@@ -1,3 +1,5 @@
+document.addEventListener('keyup', calculate);
+
 function calculate() {
     const selectedStat = document.querySelector('input[name="stat"]:checked').value;
 
@@ -64,12 +66,4 @@ function getStatValue(selectId, inputId) {
         value.mastery = inputValue * 0.25; // 熟知は0.25倍
     }
     return value;
-}
-
-// キーボードから手を離したときに計算を実行するイベントリスナーを追加
-window.onload = function() {
-    const inputs = document.querySelectorAll('input[type="number"]');
-    inputs.forEach(input => {
-        input.addEventListener('keyup', calculate);
-    });
 }
